@@ -15,6 +15,10 @@ mongoose
     console.log(err);
   });
 
+app.get("/", (req, res) => {
+  res.send(`Welcome to server ${port}`);
+});
+
 app.listen(port, () => {
   console.log(`Server is running on port:${port}`);
 });
