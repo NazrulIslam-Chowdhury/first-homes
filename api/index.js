@@ -1,8 +1,14 @@
 const express = require("express");
 const mongoose = require("mongoose");
+const cors = require("cors");
+const userRouter = require("./routes/user.route.js");
 const app = express();
 const port = process.env.PORT || 5000;
 require("dotenv").config();
+
+// middleware
+app.use(express());
+app.use(cors());
 
 mongoose
   .connect(
@@ -15,9 +21,7 @@ mongoose
     console.log(err);
   });
 
-app.get("/", (req, res) => {
-  res.send(`Welcome to server ${port}`);
-});
+app.use("/api/user", userRouter);
 
 app.listen(port, () => {
   console.log(`Server is running on port:${port}`);
