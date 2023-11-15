@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { FaRegEye, FaRegEyeSlash } from "react-icons/fa";
+import OAuth from "../components/OAuth";
 
 const SignUp = () => {
   const [formData, setFormData] = useState({});
@@ -80,6 +81,7 @@ const SignUp = () => {
         >
           {loading ? "Signing up....." : "Sign up"}
         </button>
+        <OAuth />
       </form>
       <div className="flex items-center gap-2 mt-5">
         <p>Have an account?</p>
