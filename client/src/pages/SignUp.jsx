@@ -1,10 +1,12 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import { FaRegEye, FaRegEyeSlash } from "react-icons/fa";
 
 const SignUp = () => {
   const [formData, setFormData] = useState({});
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false);
+  const [showPass, setShowPass] = useState(false);
   const navigation = useNavigate();
 
   const handleChange = (e) => {
@@ -56,13 +58,22 @@ const SignUp = () => {
           id="email"
           onChange={handleChange}
         />
-        <input
-          type="password"
-          placeholder="password"
-          className="border p-3 rounded-lg"
-          id="password"
-          onChange={handleChange}
-        />
+        <div className="relative">
+          <input
+            type={showPass ? "text" : "password"}
+            placeholder="password"
+            className="border p-3 rounded-lg w-full"
+            id="password"
+            onChange={handleChange}
+          />
+          <div className="absolute right-4 top-4 cursor-pointer">
+            {!showPass ? (
+              <FaRegEye onClick={() => setShowPass(!showPass)} />
+            ) : (
+              <FaRegEyeSlash onClick={() => setShowPass(!showPass)} />
+            )}
+          </div>
+        </div>
         <button
           disabled={loading}
           className="bg-slate-700 text-white p-3 rounded-lg uppercase hover:opacity-95 disabled:opacity-80"
