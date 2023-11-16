@@ -9,6 +9,9 @@ import {
 } from "firebase/storage";
 import app from "../firebase";
 import {
+  deleteUserFailure,
+  deleteUserStart,
+  deleteUserSuccess,
   updateUserFailure,
   updateUserStart,
   updateUserSuccess,
@@ -31,6 +34,7 @@ const Profile = () => {
     }
   }, [file]);
 
+  // update user
   const handleOnChange = (e) => {
     setFormData({ ...formData, [e.target.id]: e.target.value });
   };
@@ -53,6 +57,25 @@ const Profile = () => {
       toast.success("Profile updated successfully");
     } catch (error) {
       dispatch(updateUserFailure(error.message));
+    }
+  };
+
+  // delete user
+  const handleDeleteUser = async () => {
+    try {
+      dispatch(deleteUserStart());
+      const res = await fetch(`/api/user/delete/${currentUser._id}`, {
+        method: "DELETE",
+      });
+      const data = await res.json();
+      if (data.success === false) {
+        return dispatch(deleteUserFailure(data.message));
+      }
+
+      dispatch(deleteUserSuccess(data));
+      toast.success("User deleted");
+    } catch (error) {
+      dispatch(deleteUserFailure(error.message));
     }
   };
 
@@ -98,7 +121,7 @@ const Profile = () => {
           accept="image/*"
         />
         <img
-          src={formData.avatar || currentUser.avatar}
+          src={formData?.avatar || currentUser.avatar}
           alt="profile"
           className="rounded-full h-24 w-24 object-cover cursor-pointer self-center mt-2"
           onClick={() => fileRef.current.click()}
@@ -160,8 +183,15 @@ const Profile = () => {
         </button>
       </form>
       <div className="flex justify-between mt-5">
-        <span className="text-red-700 cursor-pointer">Delete account</span>
-        <span className="text-red-700 cursor-pointer">Sign out</span>
+        <span
+          className="text-red-700 cursor-pointer font-semibold"
+          onClick={handleDeleteUser}
+        >
+          Delete account
+        </span>
+        <span className="text-red-700 cursor-pointer font-semibold">
+          Sign out
+        </span>
       </div>
       <p className="text-red-700 mt-5 font-semibold">{error ? error : ""}</p>
     </div>
