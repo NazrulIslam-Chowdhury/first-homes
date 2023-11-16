@@ -12,6 +12,9 @@ import {
   deleteUserFailure,
   deleteUserStart,
   deleteUserSuccess,
+  logOutUserFailure,
+  logOutUserStart,
+  logOutUserSuccess,
   updateUserFailure,
   updateUserStart,
   updateUserSuccess,
@@ -76,6 +79,23 @@ const Profile = () => {
       toast.success("User deleted");
     } catch (error) {
       dispatch(deleteUserFailure(error.message));
+    }
+  };
+
+  // logging out user
+  const handleLogOut = async () => {
+    try {
+      dispatch(logOutUserStart());
+      const res = await fetch("/api/auth/signout");
+      const data = await res.json();
+      if (data === false) {
+        dispatch(logOutUserFailure(data.message));
+        return;
+      }
+      dispatch(logOutUserSuccess(data));
+      toast.success("Logged out");
+    } catch (error) {
+      dispatch(logOutUserFailure(error.message));
     }
   };
 
@@ -189,7 +209,10 @@ const Profile = () => {
         >
           Delete account
         </span>
-        <span className="text-red-700 cursor-pointer font-semibold">
+        <span
+          className="text-red-700 cursor-pointer font-semibold"
+          onClick={handleLogOut}
+        >
           Sign out
         </span>
       </div>
