@@ -2,6 +2,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { About, Home, Profile, SignIn, SignUp } from "./pages";
 import Header from "./components/Header";
 import PrivateRoute from "./components/PrivateRoute";
+import { Toaster } from "react-hot-toast";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
           <Route path="/profile" element={<Profile />} />
         </Route>
       </Routes>
+      <Toaster />
     </BrowserRouter>
   );
 }
