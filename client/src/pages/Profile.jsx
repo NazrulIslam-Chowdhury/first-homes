@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { FaRegEye, FaRegEyeSlash } from "react-icons/fa";
+import { Link } from "react-router-dom";
 import {
   getDownloadURL,
   getStorage,
@@ -201,6 +202,12 @@ const Profile = () => {
         >
           {loading ? "updating...." : "update"}
         </button>
+        <Link
+          to={"/create-listing"}
+          className="bg-green-700 text-white text-center p-3 rounded-lg uppercase hover:opacity-95"
+        >
+          Create Listing
+        </Link>
       </form>
       <div className="flex justify-between mt-5">
         <span
