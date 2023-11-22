@@ -270,7 +270,7 @@ const Profile = () => {
                 <img
                   src={listing.imgUrls[0]}
                   alt="listing cover"
-                  className="w-16 h-16 object-cover"
+                  className="w-16 h-16 object-cover rounded-lg"
                 />
               </Link>
               <Link
@@ -280,11 +280,11 @@ const Profile = () => {
                 <p>{listing.name}</p>
               </Link>
 
-              <div className="flex flex-col">
-                <button className="text-red-700 font-semibold uppercase">
+              <div className="flex flex-col gap-3">
+                <button className="text-white text-sm py-1 px-5 bg-red-800 hover:bg-red-700 transition-colors duration-300 font-semibold uppercase rounded-lg">
                   delete
                 </button>
-                <button className="text-green-700 font-semibold uppercase">
+                <button className="text-white text-sm bg-teal-800 hover:bg-teal-700  py-1 px-5 transition-colors duration-300 font-semibold uppercase rounded-lg">
                   edit
                 </button>
               </div>
