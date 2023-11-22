@@ -148,6 +148,25 @@ const Profile = () => {
       setShowListingsError(true);
     }
   };
+
+  // delete listing
+  const handleDeleteListing = async (id) => {
+    try {
+      const res = await fetch(`/api/listing/delete/${id}`, {
+        method: "DELETE",
+      });
+      const data = await res.json();
+
+      if (data.success === false) {
+        console.log(data.message);
+        return;
+      }
+
+      setUserListings((prev) => prev.filter((listing) => listing._id !== id));
+    } catch (error) {
+      console.log(error);
+    }
+  };
   return (
     <div className="p-3 max-w-lg mx-auto">
       <h1 className="text-3xl font-semibold text-center my-7">Profile</h1>
@@ -257,7 +276,7 @@ const Profile = () => {
 
       <div className="space-y-5">
         <h1 className="font-semibold text-center text-sm uppercase">
-          Your listings
+          {userListings?.length > 0 && "Your listings"}
         </h1>
         {userListings &&
           userListings.length > 0 &&
@@ -281,7 +300,10 @@ const Profile = () => {
               </Link>
 
               <div className="flex flex-col gap-3">
-                <button className="text-white text-sm py-1 px-5 bg-red-800 hover:bg-red-700 transition-colors duration-300 font-semibold uppercase rounded-lg">
+                <button
+                  onClick={() => handleDeleteListing(listing._id)}
+                  className="text-white text-sm py-1 px-5 bg-red-800 hover:bg-red-700 transition-colors duration-300 font-semibold uppercase rounded-lg"
+                >
                   delete
                 </button>
                 <button className="text-white text-sm bg-teal-800 hover:bg-teal-700  py-1 px-5 transition-colors duration-300 font-semibold uppercase rounded-lg">
