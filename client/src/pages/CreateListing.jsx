@@ -335,7 +335,7 @@ const CreateListing = () => {
                 />
                 <button
                   type="button"
-                  className="p-3 text-red-700 rounded-lg uppercase hover:opacity-75"
+                  className="text-white text-sm py-1 px-5 bg-red-800 hover:bg-red-700 transition-colors duration-300 font-semibold uppercase rounded-lg"
                   onClick={() => handleDeleteImg(index)}
                 >
                   Delete

@@ -134,7 +134,7 @@ const UpdateListing = () => {
     }
   };
 
-  // fetch api for posting listing in the database
+  // fetch api for updating listing in the database
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
@@ -150,7 +150,7 @@ const UpdateListing = () => {
       });
       const data = await res.json();
       setLoading(false);
-      toast.success("List created successfully");
+      toast.success("List updated successfully");
       if (data.success === false) {
         setError(data.message);
       }
@@ -351,7 +351,7 @@ const UpdateListing = () => {
                 />
                 <button
                   type="button"
-                  className="p-3 text-red-700 rounded-lg uppercase hover:opacity-75"
+                  className="text-white text-sm py-1 px-5 bg-red-800 hover:bg-red-700 transition-colors duration-300 font-semibold uppercase rounded-lg"
                   onClick={() => handleDeleteImg(index)}
                 >
                   Delete

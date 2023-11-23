@@ -3,6 +3,7 @@ import {
   About,
   CreateListing,
   Home,
+  Listing,
   Profile,
   SignIn,
   SignUp,
@@ -29,6 +30,7 @@ function App() {
             element={<UpdateListing />}
           />
         </Route>
+        <Route path="/listing/:listingId" element={<Listing />} />
       </Routes>
       <Toaster />
     </BrowserRouter>
