@@ -5,13 +5,13 @@ import {
   Home,
   Listing,
   Profile,
+  Search,
   SignIn,
   SignUp,
   UpdateListing,
 } from "./pages";
-import Header from "./components/Header";
-import PrivateRoute from "./components/PrivateRoute";
 import { Toaster } from "react-hot-toast";
+import { Header, PrivateRoute } from "./components";
 
 function App() {
   return (
@@ -22,6 +22,8 @@ function App() {
         <Route path="/sign-in" element={<SignIn />} />
         <Route path="/sign-up" element={<SignUp />} />
         <Route path="/about" element={<About />} />
+        <Route path="/listing/:listingId" element={<Listing />} />
+        <Route path="/search" element={<Search />} />
         <Route element={<PrivateRoute />}>
           <Route path="/profile" element={<Profile />} />
           <Route path="/create-listing" element={<CreateListing />} />
@@ -30,7 +32,6 @@ function App() {
             element={<UpdateListing />}
           />
         </Route>
-        <Route path="/listing/:listingId" element={<Listing />} />
       </Routes>
       <Toaster />
     </BrowserRouter>

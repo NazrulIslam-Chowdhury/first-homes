@@ -13,7 +13,7 @@ import {
   FaShare,
 } from "react-icons/fa";
 import { useSelector } from "react-redux";
-import Contact from "../components/Contact";
+import { Contact } from "../components";
 
 const Listing = () => {
   SwiperCore.use([Navigation]);
