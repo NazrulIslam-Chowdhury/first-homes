@@ -6,10 +6,7 @@ const ListingCard = ({ listing }) => {
     <div className="bg-white shadow-md hover:shadow-lg transition-shadow overflow-hidden rounded-lg w-full sm:w-[330px]">
       <Link to={`/listing/${listing._id}`}>
         <img
-          src={
-            listing.imgUrls[0] ||
-            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRpVAvKNnOK9MueiD7H_gtRrf5fwtjImfnK1Uqxyem4FYKVLbP8nXkT7NZe2TUREnR95K4&usqp=CAU"
-          }
+          src={listing.imgUrls && listing.imgUrls[0]}
           alt="listing cover"
           className="h-[320px] sm:h-[220px] w-full object-cover hover:scale-105 transition-scale duration-300"
         />
