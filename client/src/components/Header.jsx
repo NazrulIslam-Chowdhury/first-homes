@@ -26,7 +26,7 @@ const Header = () => {
   return (
     <header className="bg-slate-200 shadow-md ">
       <div className="flex justify-between items-center max-w-6xl mx-auto p-3">
-        <Link className="font-bold text-sm sm:text-xl flex flex-wrap">
+        <Link to={"/"} className="font-bold text-sm sm:text-xl flex flex-wrap">
           <span className="text-slate-500">First</span>
           <span className="text-slate-700">Homes</span>
         </Link>
