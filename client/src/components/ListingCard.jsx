@@ -1,0 +1,49 @@
+import { Link } from "react-router-dom";
+import { MdLocationOn } from "react-icons/md";
+
+const ListingCard = ({ listing }) => {
+  return (
+    <div className="bg-white shadow-md hover:shadow-lg transition-shadow overflow-hidden rounded-lg w-full sm:w-[330px]">
+      <Link to={`/listing/${listing._id}`}>
+        <img
+          src={
+            listing.imgUrls[0] ||
+            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRpVAvKNnOK9MueiD7H_gtRrf5fwtjImfnK1Uqxyem4FYKVLbP8nXkT7NZe2TUREnR95K4&usqp=CAU"
+          }
+          alt="listing cover"
+          className="h-[320px] sm:h-[220px] w-full object-cover hover:scale-105 transition-scale duration-300"
+        />
+        <div className="p-3 flex flex-col gap-2 w-full">
+          <h2 className="text-lg font-semibold text-slate-700 truncate">
+            {listing.name}
+          </h2>
+          <div className="flex items-center gap-1">
+            <MdLocationOn className="text-green-700 h-4 w-4" />
+            <p className="text-sm text-gray-600 truncate">{listing.address}</p>
+          </div>
+          <p className="text-sm text-gray-600 line-clamp-3">
+            {listing.description}
+          </p>
+          <p className="text-slate-500 mt-2 font-semibold">
+            $ {listing.offer ? listing.discountPrice : listing.regularPrice}
+            {listing.type === "rent" && "/ month"}
+          </p>
+          <div className="text-slate-600 flex gap-4">
+            <div className="font-bold text-xs">
+              {listing.bedrooms > 1
+                ? `${listing.bedrooms} beds`
+                : `${listing.bedrooms} bed`}
+            </div>
+            <div className="font-bold text-xs">
+              {listing.bathrooms > 1
+                ? `${listing.bathrooms} baths`
+                : `${listing.bathrooms} bath`}
+            </div>
+          </div>
+        </div>
+      </Link>
+    </div>
+  );
+};
+
+export default ListingCard;
