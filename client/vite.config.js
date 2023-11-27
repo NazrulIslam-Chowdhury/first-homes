@@ -8,7 +8,7 @@ export default defineConfig({
   server: {
     proxy: {
       "/api": {
-        target: "https://first-homes-server.vercel.app",
+        target: "http://localhost:5000",
         secure: false,
       },
     },
