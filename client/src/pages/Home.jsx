@@ -5,6 +5,7 @@ import { Autoplay, Pagination } from "swiper/modules";
 import "swiper/css/bundle";
 import { ListingCard } from "../components";
 import { FaLongArrowAltRight } from "react-icons/fa";
+import logo from "../assets/first-homes-high-resolution-logo-transparent.png";
 
 const Home = () => {
   const [offerListings, setOfferListings] = useState([]);
@@ -100,8 +101,10 @@ const Home = () => {
           ))}
       </Swiper>
 
+      <div className="flex justify-center py-40 bg-slate-600">
+        <img src={logo} alt="first homes" className="w-64" />
+      </div>
       {/* listing results for offer, sale and rent */}
-
       <div className="max-w-6xl mx-auto p-3 flex flex-col gap-8 my-10">
         {offerListings && offerListings.length > 0 && (
           <div className="">
