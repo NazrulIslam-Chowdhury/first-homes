@@ -3,6 +3,7 @@ import { CiMenuFries } from "react-icons/ci";
 import { Link, useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { useEffect, useState } from "react";
+import logo from "../assets/first-homes-high-resolution-logo-transparent.png";
 
 const Header = () => {
   const { currentUser } = useSelector((state) => state.user);
@@ -29,11 +30,7 @@ const Header = () => {
     <header className="bg-[#d6dfcc] shadow-md sticky top-0 z-10">
       <div className="flex justify-between items-center max-w-6xl mx-auto p-3">
         <Link to={"/"} className="font-bold text-sm sm:text-xl flex flex-wrap">
-          <img
-            src="/src/assets/first-homes-high-resolution-logo-transparent.png"
-            alt="logo"
-            className="w-28 sm:w-40 h-10"
-          />
+          <img src={logo} alt="logo" className="w-28 sm:w-40 h-10" />
         </Link>
         <form
           onSubmit={handleSubmit}
