@@ -26,7 +26,7 @@ const Header = () => {
     }
   }, []);
   return (
-    <header className="bg-[#d6dfcc] shadow-md  sticky top-0 z-10">
+    <header className="bg-[#d6dfcc] shadow-md sticky top-0 z-10">
       <div className="flex justify-between items-center max-w-6xl mx-auto p-3">
         <Link to={"/"} className="font-bold text-sm sm:text-xl flex flex-wrap">
           <img

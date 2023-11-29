@@ -1,16 +1,15 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation } from "swiper/modules";
-import SwiperCore from "swiper";
+import { Autoplay, Pagination } from "swiper/modules";
 import "swiper/css/bundle";
 import { ListingCard } from "../components";
+import { FaLongArrowAltRight } from "react-icons/fa";
 
 const Home = () => {
   const [offerListings, setOfferListings] = useState([]);
   const [saleListings, setSaleListings] = useState([]);
   const [rentListings, setRentListings] = useState([]);
-  SwiperCore.use([Navigation]);
 
   useEffect(() => {
     const fetchOfferListings = async () => {
@@ -45,12 +44,14 @@ const Home = () => {
     };
     fetchOfferListings();
   }, []);
+
   return (
     <div>
       {/* top */}
       <div className="flex flex-col gap-6 p-28 px-3 max-w-6xl mx-auto">
         <h1 className="text-slate-700 font-bold text-3xl lg:text-6xl uppercase">
-          Find your next <span className="text-slate-500">perfect</span>
+          Find your next{" "}
+          <span className="text-[#AECF75] tracking-widest">perfect</span>
           <br />
           place with ease
         </h1>
@@ -62,14 +63,27 @@ const Home = () => {
         </div>
         <Link
           to={"/search"}
-          className="text-xs sm:text-sm text-blue-800 font-bold hover:underline"
+          className="text-xs sm:text-sm bg-[#AECF75] text-white font-bold py-4 px-10 mr-auto uppercase rounded-lg hover:bg-[#8fbb43] hover:transition-all hover:scale-110 duration-500"
         >
-          Let's get started...
+          <div className="flex items-center gap-4">
+            <p>get started</p>
+            <FaLongArrowAltRight className="w-4 h-4" />
+          </div>
         </Link>
       </div>
 
       {/* swiper */}
-      <Swiper navigation>
+      <Swiper
+        pagination={{
+          clickable: true,
+          bulletActiveClass: "swiper-pagination-bullet-active",
+        }}
+        autoplay={{
+          delay: 3000,
+          disableOnInteraction: false,
+        }}
+        modules={[Pagination, Autoplay]}
+      >
         {offerListings &&
           offerListings.length > 0 &&
           offerListings.map((listing) => (
