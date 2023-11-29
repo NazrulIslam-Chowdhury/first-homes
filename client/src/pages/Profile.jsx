@@ -302,13 +302,13 @@ const Profile = () => {
               <div className="flex flex-col gap-3 items-center">
                 <button
                   onClick={() => handleDeleteListing(listing._id)}
-                  className="text-white text-sm py-1 px-5 bg-red-800 hover:bg-red-700 transition-colors duration-300 font-semibold uppercase rounded-lg"
+                  className="text-white text-sm py-1 px-5 bg-red-600 hover:bg-red-800 transition-colors duration-300 font-semibold uppercase rounded-lg"
                 >
                   delete
                 </button>
                 <Link
                   to={`/update-listing/${listing._id}`}
-                  className=" bg-teal-800 hover:bg-teal-700 transition-colors duration-300  rounded-lg"
+                  className=" bg-teal-600 hover:bg-teal-800 transition-colors duration-300  rounded-lg"
                 >
                   <button className="uppercase font-semibold text-white text-sm text-center  py-1 px-5">
                     edit

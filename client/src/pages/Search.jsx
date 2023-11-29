@@ -138,7 +138,7 @@ const Search = () => {
       <div className="p-7 border-b-2 md:border-r-2 md:min-h-screen">
         <form
           onSubmit={handleSubmit}
-          className="flex flex-col gap-8 sticky top-0"
+          className="flex flex-col gap-8 sticky top-24"
         >
           <div className="flex items-center gap-2">
             <label className="whitespace-nowrap font-semibold">

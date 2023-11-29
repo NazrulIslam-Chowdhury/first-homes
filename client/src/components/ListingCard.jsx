@@ -1,24 +1,32 @@
 import { Link } from "react-router-dom";
 import { MdLocationOn } from "react-icons/md";
+import { FaBath, FaBed } from "react-icons/fa";
 
 const ListingCard = ({ listing }) => {
   return (
-    <div className="bg-white shadow-md hover:shadow-lg transition-shadow overflow-hidden rounded-lg w-full sm:w-[330px]">
-      <Link to={`/listing/${listing._id}`}>
-        <img
-          src={listing.imgUrls && listing.imgUrls[0]}
-          alt="listing cover"
-          className="h-[320px] sm:h-[220px] w-full object-cover hover:scale-105 transition-scale duration-300"
-        />
+    <div className="bg-[#d6dfcc] hover:bg-[#a5d073] hover:bg-opacity-75 hover:duration-500 duration-500 shadow-lg hover:shadow-xl transition-all overflow-hidden rounded-lg w-[40rem] relative">
+      <Link
+        to={`/listing/${listing._id}`}
+        className="flex flex-col sm:flex-row gap-5"
+      >
+        <div className="w-[24rem] h-[20rem] overflow-hidden">
+          <img
+            src={listing.imgUrls && listing.imgUrls[0]}
+            alt="listing cover"
+            className="h-[320px] sm:h-full w-full object-cover hover:scale-105 transition-scale duration-300"
+          />
+        </div>
         <div className="p-3 flex flex-col gap-2 w-full">
-          <h2 className="text-lg font-semibold text-slate-700 truncate">
+          <h2 className="text-lg font-semibold text-[#9ac64d] truncate uppercase">
             {listing.name}
           </h2>
           <div className="flex items-center gap-1">
             <MdLocationOn className="text-green-700 h-4 w-4" />
-            <p className="text-sm text-gray-600 truncate">{listing.address}</p>
+            <p className="text-sm text-slate-500 truncate uppercase">
+              {listing.address}
+            </p>
           </div>
-          <p className="text-sm text-gray-600 line-clamp-3">
+          <p className="text-sm text-gray-500 line-clamp-3">
             {listing.description}
           </p>
           <p className="text-slate-500 mt-2 font-semibold">
@@ -26,21 +34,31 @@ const ListingCard = ({ listing }) => {
             {(+listing.regularPrice - +listing.discountPrice).toLocaleString(
               "en-US"
             )}
-            {listing.type === "rent" && "/ month"}
+            {listing.type === "rent" && " (Month)"}
           </p>
           <div className="text-slate-600 flex gap-4">
-            <div className="font-bold text-xs">
+            <div className="font-bold text-xs flex gap-2 items-center uppercase">
+              <FaBed className="w-5 h-5" />
               {listing.bedrooms > 1
                 ? `${listing.bedrooms} beds`
                 : `${listing.bedrooms} bed`}
             </div>
-            <div className="font-bold text-xs">
+            <div className="font-bold text-xs flex gap-2 items-center uppercase">
+              <FaBath className="w-4 h-4" />
               {listing.bathrooms > 1
                 ? `${listing.bathrooms} baths`
                 : `${listing.bathrooms} bath`}
             </div>
           </div>
         </div>
+
+        <p
+          className={`absolute top-2 right-2 ${
+            listing.type === "sale" ? "bg-red-600" : "bg-teal-600"
+          } py-2 px-5 rounded-lg text-white font-semibold uppercase`}
+        >
+          {listing.type === "rent" ? "rent" : "sale"}
+        </p>
       </Link>
     </div>
   );

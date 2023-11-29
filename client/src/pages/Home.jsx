@@ -64,7 +64,7 @@ const Home = () => {
         </div>
         <Link
           to={"/search"}
-          className="text-xs sm:text-sm bg-[#AECF75] text-white font-bold py-4 px-10 mr-auto uppercase rounded-lg hover:bg-[#8fbb43] hover:transition-all hover:scale-110 duration-500"
+          className="text-xs sm:text-sm bg-[#AECF75] text-white font-bold py-4 px-10 mr-auto uppercase rounded-lg hover:bg-[#8fbb43] hover:transition-all hover:scale-110 hover:duration-300 duration-300"
         >
           <div className="flex items-center gap-4">
             <p>get started</p>
@@ -101,22 +101,23 @@ const Home = () => {
           ))}
       </Swiper>
 
-      <div className="flex justify-center py-40 bg-slate-600">
+      <div className="flex justify-center py-40 bg-slate-500">
         <img src={logo} alt="first homes" className="w-64" />
       </div>
       {/* listing results for offer, sale and rent */}
-      <div className="max-w-6xl mx-auto p-3 flex flex-col gap-8 my-10">
+      <div className="max-w-full ml-auto sm:ml-5 p-3 flex flex-col gap-8 my-10">
         {offerListings && offerListings.length > 0 && (
-          <div className="">
-            <div className="my-3">
-              <h2 className="text-2xl font-semibold text-slate-600">
+          <div className="space-y-10">
+            <div className="my-3 space-y-5">
+              <h2 className="text-4xl text-[#AECF75] tracking-wider font-semibold uppercase">
                 Recent offers
               </h2>
               <Link
-                className="text-sm text-blue-800 hover:underline"
+                className="text-xs sm:text-sm max-w-[16rem] bg-[#AECF75] text-white font-bold py-4 px-10 mr-auto uppercase rounded-lg hover:bg-[#8fbb43] hover:transition-all hover:scale-110 hover:duration-300 duration-300 flex items-center gap-4"
                 to={"/search?offer=true"}
               >
-                Show more offers
+                <p>Show More offers</p>
+                <FaLongArrowAltRight className="w-4 h-4" />
               </Link>
             </div>
             <div className="flex flex-wrap gap-4">
@@ -127,16 +128,17 @@ const Home = () => {
           </div>
         )}
         {rentListings && rentListings.length > 0 && (
-          <div className="">
-            <div className="my-3">
-              <h2 className="text-2xl font-semibold text-slate-600">
+          <div className="space-y-10">
+            <div className="my-3 space-y-5">
+              <h2 className="text-4xl text-[#AECF75] tracking-wider font-semibold uppercase">
                 Recent places for rent
               </h2>
               <Link
-                className="text-sm text-blue-800 hover:underline"
+                className="text-xs sm:text-sm max-w-[22rem] bg-[#AECF75] text-white font-bold py-4 px-10 mr-auto uppercase rounded-lg hover:bg-[#8fbb43] hover:transition-all hover:scale-110 hover:duration-300 duration-300 flex items-center gap-4"
                 to={"/search?type=rent"}
               >
-                Show more places for rent
+                <p>Show more places for rent</p>
+                <FaLongArrowAltRight className="w-4 h-4" />
               </Link>
             </div>
             <div className="flex flex-wrap gap-4">
@@ -147,16 +149,17 @@ const Home = () => {
           </div>
         )}
         {saleListings && saleListings.length > 0 && (
-          <div className="">
-            <div className="my-3">
-              <h2 className="text-2xl font-semibold text-slate-600">
+          <div className="space-y-10">
+            <div className="my-3 space-y-5">
+              <h2 className="text-4xl text-[#AECF75] tracking-wider font-semibold uppercase">
                 Recent places for sale
               </h2>
               <Link
-                className="text-sm text-blue-800 hover:underline"
+                className="text-xs sm:text-sm max-w-[22rem] bg-[#AECF75] text-white font-bold py-4 px-10 mr-auto uppercase rounded-lg hover:bg-[#8fbb43] hover:transition-all hover:scale-110 hover:duration-300 duration-300 flex items-center gap-4"
                 to={"/search?type=sale"}
               >
-                Show more places for sale
+                <p>Show more places for sale</p>
+                <FaLongArrowAltRight className="w-4 h-4" />
               </Link>
             </div>
             <div className="flex flex-wrap gap-4">
