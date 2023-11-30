@@ -4,7 +4,7 @@ import { FaBath, FaBed } from "react-icons/fa";
 
 const ListingCard = ({ listing }) => {
   return (
-    <div className="bg-[#d6dfcc] hover:bg-[#a5d073] hover:bg-opacity-75 hover:duration-500 duration-500 shadow-lg hover:shadow-xl transition-all overflow-hidden rounded-lg w-[40rem] relative">
+    <div className="bg-[#d6dfcc] hover:bg-[#a5d073] hover:bg-opacity-75 hover:duration-500 duration-500 shadow-lg hover:shadow-xl transition-all overflow-hidden rounded-lg w-[37rem] relative">
       <Link
         to={`/listing/${listing._id}`}
         className="flex flex-col sm:flex-row gap-5"

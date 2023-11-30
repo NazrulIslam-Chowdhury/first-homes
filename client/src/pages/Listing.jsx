@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { Swiper, SwiperSlide } from "swiper/react";
 import SwiperCore from "swiper";
-import { Navigation, Autoplay } from "swiper/modules";
+import { Autoplay, Pagination } from "swiper/modules";
 import "swiper/css/bundle";
 import {
   FaBath,
@@ -16,7 +16,6 @@ import { useSelector } from "react-redux";
 import { Contact } from "../components";
 
 const Listing = () => {
-  SwiperCore.use([Navigation]);
   const [listing, setListings] = useState(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(false);
@@ -58,12 +57,16 @@ const Listing = () => {
       {listing && !loading && !error && (
         <>
           <Swiper
-            navigation
+            pagination={{
+              clickable: true,
+              bulletActiveClass: "swiper-pagination-bullet-active",
+              bulletClass: "swiper-pagination-bullet",
+            }}
             autoplay={{
               delay: 2500,
               disableOnInteraction: false,
             }}
-            modules={[Autoplay, Navigation]}
+            modules={[Autoplay, Pagination]}
           >
             {listing.imgUrls.map((image, index) => (
               <SwiperSlide key={index}>
@@ -78,31 +81,31 @@ const Listing = () => {
             ))}
           </Swiper>
 
-          <div className="fixed top-[13%] right-[3%] z-10 border rounded-full w-12 h-12 flex justify-center items-center bg-slate-100 cursor-pointer hover:scale-110 transition-transform duration-300">
+          <div className="fixed top-[13%] right-[3%] z-[1] border rounded-full w-12 h-12 flex justify-center items-center bg-[#AECF75] cursor-pointer hover:scale-110 transition-transform duration-300">
             <FaShare
-              className="text-slate-500 "
+              className="text-white "
               onClick={() => {
                 navigator.clipboard.writeText(window.location.href);
                 setCopied(true);
                 setTimeout(() => {
                   setCopied(false);
-                }, 50000);
+                }, 2000);
               }}
             />
           </div>
           {copied && (
-            <p className="fixed top-[21%] right-[5%] z-10 rounded-md bg-green-200 p-2 text-gray-700 before:bg-green-200 before:w-4 before:h-4 before:absolute before:-top-1 before:right-[3px] before:rounded-tl-lg before:rotate-[140deg] font-semibold">
+            <p className="fixed top-[21%] right-[5%] z-10 rounded-md bg-[#AECF75] p-2 text-slate-200 before:bg-[#AECF75] before:w-4 before:h-4 before:absolute before:-top-1 before:right-[3px] before:rounded-tl-lg before:rotate-[140deg] font-semibold">
               Link copied!
             </p>
           )}
 
           <div className="flex flex-col max-w-4xl mx-auto p-3 my-7 gap-4">
             <p className="text-2xl font-bold">
-              {listing.name} - ${" "}
+              <span className="uppercase">{listing.name}</span> - ${" "}
               {(+listing.regularPrice - +listing.discountPrice).toLocaleString(
                 "en-US"
               )}
-              {listing.type === "rent" && "/ month"}
+              {listing.type === "rent" && "(Month)"}
             </p>
 
             <p className="flex items-center mt-6 gap-2 text-slate-600  text-sm">
@@ -111,12 +114,12 @@ const Listing = () => {
             </p>
 
             <div className="flex gap-4">
-              <p className="bg-red-900 w-full max-w-[200px] text-white text-center p-1 rounded-md font-semibold">
+              <p className="bg-red-600 w-full max-w-[200px] text-white text-center p-1 rounded-md font-semibold">
                 {listing.type === "rent" ? "For Rent" : "For Sale"}
               </p>
 
               {listing.offer && (
-                <p className="bg-green-700 w-full max-w-[200px] text-white text-center p-1 rounded-md font-semibold">
+                <p className="bg-teal-600 w-full max-w-[200px] text-white text-center p-1 rounded-md font-semibold">
                   $
                   {listing.offer
                     ? listing.discountPrice.toLocaleString("en-US")
