@@ -78,6 +78,7 @@ const Home = () => {
         pagination={{
           clickable: true,
           bulletActiveClass: "swiper-pagination-bullet-active",
+          bulletClass: "swiper-pagination-bullet",
         }}
         autoplay={{
           delay: 3000,

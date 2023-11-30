@@ -15,7 +15,7 @@ import { Header, PrivateRoute } from "./components";
 
 function App() {
   return (
-    <div>
+    <div className="overflow-x-hidden">
       <BrowserRouter>
         <Header />
         <Routes>

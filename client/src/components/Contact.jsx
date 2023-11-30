@@ -27,9 +27,10 @@ const Contact = ({ listing }) => {
       {landlord && (
         <div className="flex flex-col gap-2">
           <p>
-            Contact <span className="font-semibold">{landlord.userName}</span>{" "}
-            for{" "}
-            <span className="font-semibold">{listing.name.toLowerCase()}</span>
+            Contact{" "}
+            <span className="font-semibold uppercase text-[#AECF75]">
+              {landlord.userName}
+            </span>
           </p>
 
           <textarea
@@ -37,7 +38,7 @@ const Contact = ({ listing }) => {
             id="message"
             value={message}
             rows={4}
-            className="w-full p-3 rounded-lg"
+            className="w-full p-3 rounded-lg outline-[#AECF75]"
             onChange={onChange}
             placeholder="Enter message...."
           />
