@@ -103,7 +103,7 @@ const Home = () => {
       </Swiper>
 
       <div className="flex justify-center py-40 bg-slate-500">
-        <img src={logo} alt="first homes" className="w-64" />
+        <img src={logo} alt="first homes" className="w-64" loading="lazy" />
       </div>
       {/* listing results for offer, sale and rent */}
       <div className="max-w-full ml-auto sm:ml-5 p-3 flex flex-col gap-8 my-10">

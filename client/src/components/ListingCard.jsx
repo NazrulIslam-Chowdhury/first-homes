@@ -55,7 +55,7 @@ const ListingCard = ({ listing }) => {
         <p
           className={`absolute top-2 right-2 ${
             listing.type === "sale" ? "bg-red-600" : "bg-teal-600"
-          } py-2 px-5 rounded-lg text-white font-semibold uppercase`}
+          } py-1 px-3 rounded-lg text-white font-semibold uppercase text-sm`}
         >
           {listing.type === "rent" ? "rent" : "sale"}
         </p>
