@@ -148,12 +148,12 @@ const Search = () => {
               type="text"
               id="searchTerm"
               placeholder="Search"
-              className="border rounded-lg p-3 w-full"
+              className="border rounded-lg p-3 w-full outline-lime-400"
               value={sideBarData.searchTerm}
               onChange={handleChange}
             />
           </div>
-          <div className="flex gap-2 flex-wrap items-center">
+          <div className="flex gap-2 flex-wrap items-center accent-lime-400">
             <label className="font-semibold">Type:</label>
             <div className="flex gap-2">
               <input
@@ -197,7 +197,7 @@ const Search = () => {
             </div>
           </div>
 
-          <div className="flex gap-2 flex-wrap items-center">
+          <div className="flex gap-2 flex-wrap items-center accent-lime-400">
             <label className="font-semibold">Amenities:</label>
             <div className="flex gap-2">
               <input
@@ -225,11 +225,13 @@ const Search = () => {
             <label className="font-semibold">Sort:</label>
             <select
               id="sort_order"
-              className="border rounded-lg p-3"
+              className="border rounded-lg p-3 outline-lime-400"
               onChange={handleChange}
               defaultValue={"created_at_desc"}
             >
-              <option value="regularPrice_desc">Price high to low</option>
+              <option value="regularPrice_desc" className="bg-lime-400">
+                Price high to low
+              </option>
               <option value="regularPrice_asc">Price low to high</option>
               <option value="createdAt_desc">Latest</option>
               <option value="createdAt_asc">Oldest</option>
