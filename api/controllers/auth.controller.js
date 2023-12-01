@@ -25,7 +25,10 @@ export const signin = async (req, res, next) => {
     const token = jwt.sign({ id: validUser._id }, process.env.JWT_SECRET_KEY);
     const { password: pass, ...rest } = validUser._doc;
     res
-      .cookie("access_token", token, { httpOnly: true })
+      .cookie("access_token", token, {
+        httpOnly: true,
+        expires: new Date(Date.now() + 86400000),
+      })
       .status(200)
       .json(rest);
   } catch (error) {
@@ -38,10 +41,12 @@ export const google = async (req, res, next) => {
     const user = await User.findOne({ email: req.body.email });
     if (user) {
       const token = jwt.sign({ id: user._id }, process.env.JWT_SECRET_KEY);
-      console.log(token);
       const { password: pass, ...rest } = user._doc;
       res
-        .cookie("access_token", token, { httpOnly: true })
+        .cookie("access_token", token, {
+          httpOnly: true,
+          expires: new Date(Date.now() + 86400000),
+        })
         .status(200)
         .json(rest);
     } else {
@@ -61,7 +66,10 @@ export const google = async (req, res, next) => {
       const token = jwt.sign({ id: newUser._id }, process.env.JWT_SECRET_KEY);
       const { password: pass, ...rest } = newUser._doc;
       res
-        .cookie("access_token", token, { httpOnly: true })
+        .cookie("access_token", token, {
+          httpOnly: true,
+          expires: new Date(Date.now() + 86400000),
+        })
         .status(200)
         .json(rest);
     }
