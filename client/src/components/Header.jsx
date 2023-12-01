@@ -49,26 +49,26 @@ const Header = () => {
             </button>
           </div>
         </form>
-        <nav className="flex items-center gap-4">
+        <ul className="flex items-center gap-4">
           <Link
             to="/"
             className="hidden sm:inline text-white font-semibold hover:bg-[#AECF75] hover:py-2 hover:px-5 px-5 hover:transition-all duration-300 hover:bg-opacity-75 hover:rounded-lg cursor-pointer"
           >
-            Home
+            <li>Home</li>
           </Link>
           <Link
             to="/about"
             className="hidden sm:inline text-white font-semibold hover:bg-[#AECF75] hover:py-2 hover:px-5 px-5 hover:transition-all duration-300 hover:bg-opacity-75 hover:rounded-lg cursor-pointer"
           >
-            About
+            <li>About</li>
           </Link>
 
-          <Link to="/profile" className=" cursor-pointer">
+          <Link to="/profile" className=" cursor-pointer hidden sm:flex">
             {currentUser ? (
               <img
                 src={currentUser.avatar}
                 alt="profile"
-                className="rounded-full h-8 w-8 object-cover hidden sm:flex"
+                className="rounded-full h-8 w-8 object-cover"
               />
             ) : (
               <li className="text-white font-semibold hover:bg-[#AECF75] hover:py-2 hover:px-5 px-5 hover:transition-all duration-300 hover:bg-opacity-75 hover:rounded-lg">
@@ -100,16 +100,16 @@ const Header = () => {
                   to="/"
                   className=" text-white font-semibold hover:bg-[#AECF75] hover:py-2 hover:px-5 px-5 hover:transition-all duration-300 hover:bg-opacity-75 hover:rounded-lg cursor-pointer"
                 >
-                  Home
+                  <li> Home</li>
                 </Link>
                 <Link
                   to="/about"
                   className=" text-white font-semibold hover:bg-[#AECF75] hover:py-2 hover:px-5 px-5 hover:transition-all duration-300 hover:bg-opacity-75 hover:rounded-lg cursor-pointer"
                 >
-                  About
+                  <li>About</li>
                 </Link>
 
-                <Link to="/profile" className="cursor-pointer ml-4">
+                <Link to="/profile" className="cursor-pointer">
                   {currentUser ? (
                     <img
                       src={currentUser.avatar}
@@ -125,7 +125,7 @@ const Header = () => {
               </ul>
             </div>
           </div>
-        </nav>
+        </ul>
       </div>
     </header>
   );
