@@ -170,7 +170,10 @@ const Profile = () => {
   return (
     <div className="p-3 max-w-lg mx-auto">
       <h1 className="text-3xl font-semibold text-center my-7">Profile</h1>
-      <form className="flex flex-col gap-4" onSubmit={handleSubmit}>
+      <form
+        className="flex flex-col gap-4 relative bg-[#cddcbc] p-7 mt-20 rounded-lg"
+        onSubmit={handleSubmit}
+      >
         <input
           onChange={(e) => setFile(e.target.files[0])}
           type="file"
@@ -181,7 +184,7 @@ const Profile = () => {
         <img
           src={formData?.avatar || currentUser.avatar}
           alt="profile"
-          className="rounded-full h-24 w-24 object-cover cursor-pointer self-center mt-2"
+          className="rounded-full h-24 w-24 object-cover cursor-pointer self-center mt-2 absolute -top-16 border-2"
           onClick={() => fileRef.current.click()}
         />
         <p className="text-sm self-center font-semibold">
@@ -201,36 +204,38 @@ const Profile = () => {
             ""
           )}
         </p>
-        <input
-          type="text"
-          placeholder="username"
-          className="border p-3 rounded-lg"
-          id="userName"
-          defaultValue={currentUser.userName}
-          onChange={handleOnChange}
-        />
-        <input
-          type="email"
-          placeholder="email"
-          className="border p-3 rounded-lg"
-          id="email"
-          defaultValue={currentUser.email}
-          onChange={handleOnChange}
-        />
-        <div className="relative">
+        <div className="mt-10 flex flex-col gap-5">
           <input
-            type={showPass ? "text" : "password"}
-            placeholder="password"
-            className="border p-3 rounded-lg w-full"
-            id="password"
+            type="text"
+            placeholder="username"
+            className="border p-3 rounded-lg outline-lime-400"
+            id="userName"
+            defaultValue={currentUser.userName}
             onChange={handleOnChange}
           />
-          <div className="absolute right-4 top-4 cursor-pointer">
-            {!showPass ? (
-              <FaRegEye onClick={() => setShowPass(!showPass)} />
-            ) : (
-              <FaRegEyeSlash onClick={() => setShowPass(!showPass)} />
-            )}
+          <input
+            type="email"
+            placeholder="email"
+            className="border p-3 rounded-lg outline-lime-400"
+            id="email"
+            defaultValue={currentUser.email}
+            onChange={handleOnChange}
+          />
+          <div className="relative">
+            <input
+              type={showPass ? "text" : "password"}
+              placeholder="password"
+              className="border p-3 rounded-lg w-full outline-lime-400"
+              id="password"
+              onChange={handleOnChange}
+            />
+            <div className="absolute right-4 top-4 cursor-pointer">
+              {!showPass ? (
+                <FaRegEye onClick={() => setShowPass(!showPass)} />
+              ) : (
+                <FaRegEyeSlash onClick={() => setShowPass(!showPass)} />
+              )}
+            </div>
           </div>
         </div>
         <button
