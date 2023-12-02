@@ -4,12 +4,12 @@ import { FaBath, FaBed } from "react-icons/fa";
 
 const ListingCard = ({ listing }) => {
   return (
-    <div className="bg-[#d6dfcc] hover:bg-[#a5d073] hover:bg-opacity-75 hover:duration-500 duration-500 shadow-lg hover:shadow-xl transition-all overflow-hidden rounded-lg w-[37rem] relative">
+    <div className="bg-[#d6dfcc] hover:bg-[#a5d073] hover:bg-opacity-75 hover:duration-500 duration-500 shadow-lg hover:shadow-xl transition-all overflow-hidden rounded-lg w-[33rem] relative">
       <Link
         to={`/listing/${listing._id}`}
-        className="flex flex-col sm:flex-row gap-5"
+        className="flex flex-col sm:flex-row gap-2"
       >
-        <div className="w-[24rem] h-[20rem] overflow-hidden">
+        <div className="w-[26rem] h-[20rem] overflow-hidden">
           <img
             src={listing.imgUrls && listing.imgUrls[0]}
             alt="listing cover"
@@ -53,7 +53,7 @@ const ListingCard = ({ listing }) => {
         </div>
 
         <p
-          className={`absolute top-2 right-2 ${
+          className={`absolute bottom-2 right-2 ${
             listing.type === "sale" ? "bg-red-600" : "bg-teal-600"
           } py-1 px-3 rounded-lg text-white font-semibold uppercase text-sm`}
         >

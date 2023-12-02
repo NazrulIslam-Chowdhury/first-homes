@@ -101,11 +101,11 @@ const Home = () => {
           ))}
       </Swiper>
 
-      <div className="flex justify-center py-40 bg-slate-500">
+      <div className="flex justify-center py-40 bg-slate-500 bg-opacity-10">
         <img src={logo} alt="first homes" className="w-64" loading="lazy" />
       </div>
       {/* listing results for offer, sale and rent */}
-      <div className="max-w-full ml-auto sm:ml-5 p-3 flex flex-col gap-8 my-10">
+      <div className="max-w-full ml-auto sm:ml-3 p-3 flex flex-col gap-8 my-10">
         {offerListings && offerListings.length > 0 && (
           <div className="space-y-10">
             <div className="my-3 space-y-5">
