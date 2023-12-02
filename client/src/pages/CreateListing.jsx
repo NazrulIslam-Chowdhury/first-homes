@@ -155,7 +155,7 @@ const CreateListing = () => {
           <input
             type="text"
             placeholder="Name"
-            className="border p-3 rounded-lg"
+            className="border p-3 rounded-lg outline-lime-400"
             id="name"
             maxLength="62"
             minLength="10"
@@ -166,7 +166,7 @@ const CreateListing = () => {
           <textarea
             type="text"
             placeholder="Description"
-            className="border p-3 rounded-lg"
+            className="border p-3 rounded-lg outline-lime-400"
             id="description"
             rows="5"
             onChange={handleChange}
@@ -176,14 +176,14 @@ const CreateListing = () => {
           <input
             type="text"
             placeholder="Address"
-            className="border p-3 rounded-lg"
+            className="border p-3 rounded-lg outline-lime-400"
             id="address"
             onChange={handleChange}
             value={formData.address}
             required
           />
-          <div className="flex gap-6 flex-wrap mt-5">
-            <div className="flex gap-2">
+          <div className="flex gap-6 flex-wrap mt-5 accent-lime-400">
+            <div className="flex gap-2 ">
               <input
                 type="checkbox"
                 id="sale"
@@ -243,7 +243,7 @@ const CreateListing = () => {
                 max="10"
                 onChange={handleChange}
                 value={formData.bedrooms}
-                className="p-3 border border-gray-300 rounded-lg"
+                className="p-3 border border-gray-300 rounded-lg outline-lime-400"
                 required
               />
               <span>Beds</span>
@@ -256,7 +256,7 @@ const CreateListing = () => {
                 max="10"
                 onChange={handleChange}
                 value={formData.bathrooms}
-                className="p-3 border border-gray-300 rounded-lg"
+                className="p-3 border border-gray-300 rounded-lg outline-lime-400"
                 required
               />
               <span>Baths</span>
@@ -269,7 +269,7 @@ const CreateListing = () => {
                 max="10000000"
                 onChange={handleChange}
                 value={formData.regularPrice}
-                className="p-3 border border-gray-300 rounded-lg"
+                className="p-3 border border-gray-300 rounded-lg outline-lime-400"
                 required
               />
               <div className="flex flex-col items-center">
@@ -286,7 +286,7 @@ const CreateListing = () => {
                   max="10000000"
                   onChange={handleChange}
                   value={formData.discountPrice}
-                  className="p-3 border border-gray-300 rounded-lg"
+                  className="p-3 border border-gray-300 rounded-lg outline-lime-400"
                   required
                 />
                 <div className="flex flex-col items-center">
@@ -316,7 +316,7 @@ const CreateListing = () => {
             <button
               type="button"
               disabled={uploading}
-              className="p-3 text-green-700 border border-green-700 rounded uppercase hover:shadow-lg disabled:opacity-80"
+              className="p-3 text-white font-semibold border bg-[#AECF75] rounded uppercase hover:shadow-lg hover:bg-[#9ec45b] disabled:opacity-80"
               onClick={handleImgUpload}
             >
               {uploading ? "uploading...." : "upload"}
