@@ -1,8 +1,13 @@
-# React + Vite
+# First Homes
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+### https://first-homes.onrender.com/
 
-Currently, two official plugins are available:
+## Features that an user can have in this application.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### 1.An user can create a listing for sale or rent his/her home.
+
+### 2.An user can contact with the owner of the property.
+
+### 3.Multiple ways sorting.
+
+### 4.Searching property.
