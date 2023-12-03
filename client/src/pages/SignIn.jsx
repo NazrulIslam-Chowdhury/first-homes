@@ -46,7 +46,9 @@ const SignIn = () => {
 
   return (
     <div className="p-3 max-w-lg mx-auto">
-      <h1 className="text-3xl text-center font-semibold my-7">Sign In</h1>
+      <h1 className="text-3xl text-center font-semibold my-7 uppercase">
+        Sign In
+      </h1>
       <form
         className="flex flex-col gap-4 bg-[#cddcbc] p-7 rounded-lg"
         onSubmit={handleSubmit}
@@ -54,7 +56,7 @@ const SignIn = () => {
         <input
           type="email"
           placeholder="email"
-          className="border p-3 rounded-lg"
+          className="border p-3 rounded-lg outline-lime-400"
           id="email"
           onChange={handleChange}
         />
@@ -62,7 +64,7 @@ const SignIn = () => {
           <input
             type={showPass ? "text" : "password"}
             placeholder="password"
-            className="border p-3 rounded-lg w-full"
+            className="border p-3 rounded-lg w-full outline-lime-400"
             id="password"
             onChange={handleChange}
           />
