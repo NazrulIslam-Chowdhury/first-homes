@@ -169,7 +169,9 @@ const Profile = () => {
   };
   return (
     <div className="p-3 max-w-lg mx-auto">
-      <h1 className="text-3xl font-semibold text-center my-7">Profile</h1>
+      <h1 className="text-3xl font-semibold text-center my-7 uppercase">
+        Profile
+      </h1>
       <form
         className="flex flex-col gap-4 relative bg-[#cddcbc] p-7 mt-20 rounded-lg"
         onSubmit={handleSubmit}
@@ -275,7 +277,7 @@ const Profile = () => {
           Show listings
         </button>
         <p className="text-red-700 mt-5">
-          {showListingsError ? "Error showing listings" : ""}
+          {showListingsError ? "Error showing listings or sign in again" : ""}
         </p>
       </div>
 

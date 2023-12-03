@@ -147,7 +147,7 @@ const CreateListing = () => {
   };
   return (
     <main className="p-3 max-w-4xl mx-auto">
-      <h1 className="text-3xl font-semibold text-center my-7">
+      <h1 className="text-3xl font-semibold text-center my-7 uppercase">
         Create a Listing
       </h1>
       <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-6">
@@ -350,7 +350,11 @@ const CreateListing = () => {
           >
             {loading ? "Creating...." : "Create listing"}
           </button>
-          {error && <p className="text-red-700 font-semibold">{error}</p>}
+          {error && (
+            <p className="text-red-700 font-semibold">
+              {error} (check the inputs again or sign in again)
+            </p>
+          )}
         </div>
       </form>
     </main>
