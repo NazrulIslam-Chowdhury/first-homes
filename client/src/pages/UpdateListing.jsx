@@ -202,7 +202,7 @@ const UpdateListing = () => {
               <input
                 type="checkbox"
                 id="sale"
-                className="w-5"
+                className="w-7 h-7 appearance-none bg-white border-2 relative align-middle inline-block rounded-full transition-all ease-in-out duration-[0.4s] overflow-hidden  before:content-['\2713'] before:text-white before:absolute before:font-bold before:leading-5 before:right-2 before:scale-0 before:transition-all before:ease-in-out before:duration-[0.4s] before:checked:scale-[120%] checked:bg-lime-400 cursor-pointer"
                 onChange={handleChange}
                 checked={formData.type === "sale"}
               />
@@ -212,7 +212,7 @@ const UpdateListing = () => {
               <input
                 type="checkbox"
                 id="rent"
-                className="w-5"
+                className="w-7 h-7 appearance-none bg-white border-2 relative align-middle inline-block rounded-full transition-all ease-in-out duration-[0.4s] overflow-hidden  before:content-['\2713'] before:text-white before:absolute before:font-bold before:leading-5 before:right-2 before:scale-0 before:transition-all before:ease-in-out before:duration-[0.4s] before:checked:scale-[120%] checked:bg-lime-400 cursor-pointer"
                 onChange={handleChange}
                 checked={formData.type === "rent"}
               />
@@ -222,7 +222,7 @@ const UpdateListing = () => {
               <input
                 type="checkbox"
                 id="parking"
-                className="w-5"
+                className="w-7 h-7 appearance-none bg-white border-2 relative align-middle inline-block rounded-full transition-all ease-in-out duration-[0.4s] overflow-hidden  before:content-['\2713'] before:text-white before:absolute before:font-bold before:leading-5 before:right-2 before:scale-0 before:transition-all before:ease-in-out before:duration-[0.4s] before:checked:scale-[120%] checked:bg-lime-400 cursor-pointer"
                 onChange={handleChange}
                 checked={formData.parking}
               />
@@ -232,7 +232,7 @@ const UpdateListing = () => {
               <input
                 type="checkbox"
                 id="furnished"
-                className="w-5"
+                className="w-7 h-7 appearance-none bg-white border-2 relative align-middle inline-block rounded-full transition-all ease-in-out duration-[0.4s] overflow-hidden  before:content-['\2713'] before:text-white before:absolute before:font-bold before:leading-5 before:right-2 before:scale-0 before:transition-all before:ease-in-out before:duration-[0.4s] before:checked:scale-[120%] checked:bg-lime-400 cursor-pointer"
                 onChange={handleChange}
                 checked={formData.furnished}
               />
@@ -242,7 +242,7 @@ const UpdateListing = () => {
               <input
                 type="checkbox"
                 id="offer"
-                className="w-5"
+                className="w-7 h-7 appearance-none bg-white border-2 relative align-middle inline-block rounded-full transition-all ease-in-out duration-[0.4s] overflow-hidden  before:content-['\2713'] before:text-white before:absolute before:font-bold before:leading-5 before:right-2 before:scale-0 before:transition-all before:ease-in-out before:duration-[0.4s] before:checked:scale-[120%] checked:bg-lime-400 cursor-pointer"
                 onChange={handleChange}
                 checked={formData.offer}
               />
