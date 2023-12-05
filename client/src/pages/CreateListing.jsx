@@ -182,12 +182,12 @@ const CreateListing = () => {
             value={formData.address}
             required
           />
-          <div className="flex gap-6 flex-wrap mt-5 accent-lime-400">
+          <div className="flex gap-6 flex-wrap mt-5">
             <div className="flex gap-2 ">
               <input
                 type="checkbox"
                 id="sale"
-                className="w-5"
+                className="w-7 h-7 appearance-none bg-white border-2 relative align-middle inline-block rounded-full transition-all ease-in-out duration-[0.4s] overflow-hidden  before:content-['\2713'] before:text-white before:absolute before:font-bold before:leading-5 before:right-1.5 before:top-0.5 before:scale-0 before:transition-all before:ease-in-out before:duration-[0.4s] before:checked:scale-[120%] checked:bg-lime-400 cursor-pointer"
                 onChange={handleChange}
                 checked={formData.type === "sale"}
               />
@@ -197,7 +197,7 @@ const CreateListing = () => {
               <input
                 type="checkbox"
                 id="rent"
-                className="w-5"
+                className="w-7 h-7 appearance-none bg-white border-2 relative align-middle inline-block rounded-full transition-all ease-in-out duration-[0.4s] overflow-hidden  before:content-['\2713'] before:text-white before:absolute before:font-bold before:leading-5 before:right-1.5 before:top-0.5 before:scale-0 before:transition-all before:ease-in-out before:duration-[0.4s] before:checked:scale-[120%] checked:bg-lime-400 cursor-pointer"
                 onChange={handleChange}
                 checked={formData.type === "rent"}
               />
@@ -207,7 +207,7 @@ const CreateListing = () => {
               <input
                 type="checkbox"
                 id="parking"
-                className="w-5"
+                className="w-7 h-7 appearance-none bg-white border-2 relative align-middle inline-block rounded-full transition-all ease-in-out duration-[0.4s] overflow-hidden  before:content-['\2713'] before:text-white before:absolute before:font-bold before:leading-5 before:right-1.5 before:top-0.5 before:scale-0 before:transition-all before:ease-in-out before:duration-[0.4s] before:checked:scale-[120%] checked:bg-lime-400 cursor-pointer"
                 onChange={handleChange}
                 checked={formData.parking}
               />
@@ -217,7 +217,7 @@ const CreateListing = () => {
               <input
                 type="checkbox"
                 id="furnished"
-                className="w-5"
+                className="w-7 h-7 appearance-none bg-white border-2 relative align-middle inline-block rounded-full transition-all ease-in-out duration-[0.4s] overflow-hidden  before:content-['\2713'] before:text-white before:absolute before:font-bold before:leading-5 before:right-1.5 before:top-0.5 before:scale-0 before:transition-all before:ease-in-out before:duration-[0.4s] before:checked:scale-[120%] checked:bg-lime-400 cursor-pointer"
                 onChange={handleChange}
                 checked={formData.furnished}
               />
@@ -227,7 +227,7 @@ const CreateListing = () => {
               <input
                 type="checkbox"
                 id="offer"
-                className="w-5"
+                className="w-7 h-7 appearance-none bg-white border-2 relative align-middle inline-block rounded-full transition-all ease-in-out duration-[0.4s] overflow-hidden  before:content-['\2713'] before:text-white before:absolute before:font-bold before:leading-5 before:right-1.5 before:top-0.5 before:scale-0 before:transition-all before:ease-in-out before:duration-[0.4s] before:checked:scale-[120%] checked:bg-lime-400 cursor-pointer"
                 onChange={handleChange}
                 checked={formData.offer}
               />
