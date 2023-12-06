@@ -159,7 +159,7 @@ const Search = () => {
               <input
                 type="checkbox"
                 id="all"
-                className="w-5"
+                className="w-7 h-7 appearance-none bg-white border-2 relative align-middle inline-block rounded-full transition-all ease-in-out duration-[0.4s] overflow-hidden  before:content-['\2713'] before:text-white before:absolute before:font-bold before:leading-5 before:right-[0.4rem] before:top-0.5 before:scale-0 before:transition-all before:ease-in-out before:duration-[0.4s] before:checked:scale-[120%] checked:bg-lime-400 cursor-pointer"
                 onChange={handleChange}
                 checked={sideBarData.type === "all"}
               />
@@ -169,7 +169,7 @@ const Search = () => {
               <input
                 type="checkbox"
                 id="rent"
-                className="w-5"
+                className="w-7 h-7 appearance-none bg-white border-2 relative align-middle inline-block rounded-full transition-all ease-in-out duration-[0.4s] overflow-hidden  before:content-['\2713'] before:text-white before:absolute before:font-bold before:leading-5 before:right-[0.4rem] before:top-0.5 before:scale-0 before:transition-all before:ease-in-out before:duration-[0.4s] before:checked:scale-[120%] checked:bg-lime-400 cursor-pointer"
                 onChange={handleChange}
                 checked={sideBarData.type === "rent"}
               />
@@ -179,7 +179,7 @@ const Search = () => {
               <input
                 type="checkbox"
                 id="sale"
-                className="w-5"
+                className="w-7 h-7 appearance-none bg-white border-2 relative align-middle inline-block rounded-full transition-all ease-in-out duration-[0.4s] overflow-hidden  before:content-['\2713'] before:text-white before:absolute before:font-bold before:leading-5 before:right-[0.4rem] before:top-0.5 before:scale-0 before:transition-all before:ease-in-out before:duration-[0.4s] before:checked:scale-[120%] checked:bg-lime-400 cursor-pointer"
                 onChange={handleChange}
                 checked={sideBarData.type === "sale"}
               />
@@ -189,7 +189,7 @@ const Search = () => {
               <input
                 type="checkbox"
                 id="offer"
-                className="w-5"
+                className="w-7 h-7 appearance-none bg-white border-2 relative align-middle inline-block rounded-full transition-all ease-in-out duration-[0.4s] overflow-hidden  before:content-['\2713'] before:text-white before:absolute before:font-bold before:leading-5 before:right-[0.4rem] before:top-0.5 before:scale-0 before:transition-all before:ease-in-out before:duration-[0.4s] before:checked:scale-[120%] checked:bg-lime-400 cursor-pointer"
                 onChange={handleChange}
                 checked={sideBarData.offer === true}
               />
@@ -203,7 +203,7 @@ const Search = () => {
               <input
                 type="checkbox"
                 id="parking"
-                className="w-5"
+                className="w-7 h-7 appearance-none bg-white border-2 relative align-middle inline-block rounded-full transition-all ease-in-out duration-[0.4s] overflow-hidden  before:content-['\2713'] before:text-white before:absolute before:font-bold before:leading-5 before:right-[0.4rem] before:top-0.5 before:scale-0 before:transition-all before:ease-in-out before:duration-[0.4s] before:checked:scale-[120%] checked:bg-lime-400 cursor-pointer"
                 onChange={handleChange}
                 checked={sideBarData.parking === true}
               />
@@ -213,7 +213,7 @@ const Search = () => {
               <input
                 type="checkbox"
                 id="furnished"
-                className="w-5"
+                className="w-7 h-7 appearance-none bg-white border-2 relative align-middle inline-block rounded-full transition-all ease-in-out duration-[0.4s] overflow-hidden  before:content-['\2713'] before:text-white before:absolute before:font-bold before:leading-5 before:right-[0.4rem] before:top-0.5 before:scale-0 before:transition-all before:ease-in-out before:duration-[0.4s] before:checked:scale-[120%] checked:bg-lime-400 cursor-pointer"
                 onChange={handleChange}
                 checked={sideBarData.furnished === true}
               />
