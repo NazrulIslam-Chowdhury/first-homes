@@ -63,7 +63,7 @@ const Home = () => {
         </div>
         <Link
           to={"/search"}
-          className="text-xs sm:text-sm bg-[#AECF75] text-white font-bold py-4 px-10 mr-auto uppercase rounded-lg hover:bg-[#8fbb43] hover:transition-all hover:scale-110 hover:duration-300 duration-300"
+          className=" bg-[#AECF75] text-white font-bold py-4 px-10 mr-auto uppercase rounded-lg hover:bg-[#8fbb43] hover:transition-all hover:scale-110 hover:duration-300 duration-300"
         >
           <div className="flex items-center gap-4">
             <p>get started</p>
@@ -113,7 +113,7 @@ const Home = () => {
                 Recent offers
               </h2>
               <Link
-                className="text-xs sm:text-sm max-w-[16rem] bg-[#AECF75] text-white font-bold py-4 px-10 mr-auto uppercase rounded-lg hover:bg-[#8fbb43] hover:transition-all hover:scale-110 hover:duration-300 duration-300 flex items-center gap-4"
+                className="max-w-[18rem] bg-[#AECF75] text-white font-bold py-4 px-10 mr-auto uppercase rounded-lg hover:bg-[#8fbb43] hover:transition-all hover:scale-110 hover:duration-300 duration-300 flex items-center gap-4"
                 to={"/search?offer=true"}
               >
                 <p>Show More offers</p>
@@ -134,7 +134,7 @@ const Home = () => {
                 Recent places for rent
               </h2>
               <Link
-                className="text-xs sm:text-sm max-w-[22rem] bg-[#AECF75] text-white font-bold py-4 px-10 mr-auto uppercase rounded-lg hover:bg-[#8fbb43] hover:transition-all hover:scale-110 hover:duration-300 duration-300 flex items-center gap-4"
+                className="max-w-[23rem] bg-[#AECF75] text-white font-bold py-4 px-10 uppercase rounded-lg hover:bg-[#8fbb43] hover:transition-all hover:scale-110 hover:duration-300 duration-300 flex items-center gap-4"
                 to={"/search?type=rent"}
               >
                 <p>Show more places for rent</p>
@@ -155,7 +155,7 @@ const Home = () => {
                 Recent places for sale
               </h2>
               <Link
-                className="text-xs sm:text-sm max-w-[22rem] bg-[#AECF75] text-white font-bold py-4 px-10 mr-auto uppercase rounded-lg hover:bg-[#8fbb43] hover:transition-all hover:scale-110 hover:duration-300 duration-300 flex items-center gap-4"
+                className=" max-w-[22rem] bg-[#AECF75] text-white font-bold py-4 px-10 mr-auto uppercase rounded-lg hover:bg-[#8fbb43] hover:transition-all hover:scale-110 hover:duration-300 duration-300 flex items-center gap-4"
                 to={"/search?type=sale"}
               >
                 <p>Show more places for sale</p>
